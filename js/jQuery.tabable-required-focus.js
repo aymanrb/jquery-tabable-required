@@ -29,6 +29,6 @@
 				nextIndex = currentIndex + 1;
 			}
 		}
-		requiredElements.eq(nextIndex).focus();
+		focusableElements.eq(nextIndex).focus();
 	}
 })(jQuery);
