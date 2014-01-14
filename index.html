@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Required Focus</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/jquery.required-focus.js"></script>
+<style>
+	input,select,textarea,button{
+		clear:both;
+		float:left;
+		display:block;
+	}
+	label{
+		float:left;
+		font-weight:bold;
+	}
+</style>
+</head>
+<body>
+<form>
+  <label>Inp</label>
+  <input type="button" value="Input Button">
+  <input type="checkbox"> <label>Inp</label>
+  <input type="file" required>
+  <input type="text" value="this is not required">
+  <input type="password" required>
+  <input type="radio">
+  <input type="text" value="while this is required">
+  <select required>
+    <option>Option</option>
+  </select>
+  <textarea required></textarea>
+  <button>Button</button>
+  <input type="submit" value="Submit"/>
+  <input type="reset" value="Reset" />
+</form>
+</body>
+</html>

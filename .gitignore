@@ -1,0 +1,6 @@
+# Eclipse project files
+/.cache
+.project
+/.settings
+.buildpath
+.ssh
