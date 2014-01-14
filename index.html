@@ -4,34 +4,46 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Required Focus</title>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="js/jquery.required-focus.js"></script>
+<script src="js/jQuery.tabable-required-focus.js"></script>
 <style>
 	input,select,textarea,button{
 		clear:both;
 		float:left;
 		display:block;
+		padding:4px;
 	}
 	label{
+		clear:left;
 		float:left;
 		font-weight:bold;
+		margin-top:10px;
 	}
 </style>
 </head>
 <body>
+<h1>jQuery Tabable Required Plugin Demo</h1>
 <form>
-  <label>Inp</label>
-  <input type="button" value="Input Button">
-  <input type="checkbox"> <label>Inp</label>
+  <label>Your Name: (Optional)</label><input type="text" value="this is not required">
+  <label>Button 1</label><button>Button</button>
+  <label>An Important Checkbox</label><input type="checkbox" required> 
+  <label>Upload Image</label>
   <input type="file" required>
+  <label>Something we don't care about</label>
   <input type="text" value="this is not required">
+  <label>Password:</label>
   <input type="password" required>
+  <label>Radio:</label>
   <input type="radio">
+  <label>Imp Info:</label>
   <input type="text" value="while this is required">
+  <label>Imp Select:</label>
   <select required>
-    <option>Option</option>
+    <option value="">Please Select Category</option>
+    <option value="1">Category 1</option>
+    <option value="2">Category 2</option>
   </select>
-  <textarea required></textarea>
-  <button>Button</button>
+  <label>Notes:</label>
+  <textarea></textarea>
   <input type="submit" value="Submit"/>
   <input type="reset" value="Reset" />
 </form>
