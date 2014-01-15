@@ -3,7 +3,7 @@
 	
 	//On Page Load prevent the default Enter keypress action and get to the focus function
 	$(document).ready(function(){
-		$(this).on("keypress keydown", function(e) {
+		$('form').on("keypress keydown", function(e) {
 		  var code = e.keyCode || e.which; 
 		  if (code == 13) { //If 'Enter'
 		    e.preventDefault();
