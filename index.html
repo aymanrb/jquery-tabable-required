@@ -1,51 +1,111 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Required Focus</title>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="js/jQuery.tabable-required-focus.js"></script>
-<style>
-	input,select,textarea,button{
-		clear:both;
-		float:left;
-		display:block;
-		padding:4px;
-	}
-	label{
-		clear:left;
-		float:left;
-		font-weight:bold;
-		margin-top:10px;
-	}
-</style>
-</head>
-<body>
-<h1>jQuery Tabable Required Plugin Demo</h1>
-<form>
-  <label>Your Name: (Optional)</label><input type="text" value="this is not required">
-  <label>Button 1</label><button>Button</button>
-  <label>An Important Checkbox</label><input type="checkbox" required> 
-  <label>Upload Image</label>
-  <input type="file" required>
-  <label>Something we don't care about</label>
-  <input type="text" value="this is not required">
-  <label>Password:</label>
-  <input type="password" required>
-  <label>Radio:</label>
-  <input type="radio">
-  <label>Imp Info:</label>
-  <input type="text" value="while this is required">
-  <label>Imp Select:</label>
-  <select required>
-    <option value="">Please Select Category</option>
-    <option value="1">Category 1</option>
-    <option value="2">Category 2</option>
-  </select>
-  <label>Notes:</label>
-  <textarea></textarea>
-  <input type="submit" value="Submit"/>
-  <input type="reset" value="Reset" />
-</form>
-</body>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Required Fields Focus</title>
+    <link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/jQuery.tabable-required-focus.js"></script>
+    <script>
+    	$(document).ready(function(){
+    		$('#firstElem').focus();
+    	});
+    </script>
+    <style>
+      body{
+      	background:#333;
+      }
+      #container{
+	      background: #fff;
+	      font-size: 12pt;
+	      width:900px;
+	      margin:auto;
+	      margin-top:50px;
+	      padding:20px;
+      }
+      h1{
+      	color:#EE3322;
+      	text-align: center;
+      	font-family: 'Gloria Hallelujah', cursive;
+      }
+      .desc{
+      	color: #666;
+      	margin-bottom: 10px;
+      	text-align: center;
+      	font-size:10pt;
+      }
+      
+      input,select,textarea,button{
+     	 padding:4px;
+      }
+      label{
+	      margin-top:10px;
+	      width:200px;
+	      text-align:right;
+	      display:inline-block;
+	      margin-right: 8px;
+      }
+      .required label{
+      	font-weight: bolder;
+      }
+      .required label:after {
+	      color: #e32;
+	      content: '*';
+	      display: inline;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>jQuery Tabable Required Fields Plugin Demo</h1>
+      <div class="desc">Based on the HTML5 required attribute this plugin will cancel the normal on 'Enter' keypress form submission action and replaces it with a tabing effect on required fields only (where applicable). <b>TRY IT YOURSELF</b></div>
+      <form>
+        <div>
+          <label>Your Name: (Optional)</label><input id="firstElem" type="text" placeholder="this is not required">
+        </div>
+        <div>
+          <label>Button 1</label><button>Button</button>
+        </div>
+        <div class="required">
+          <label>An Important Checkbox</label><input type="checkbox" required>
+        </div>
+        <div class="required">
+          <label>Upload Image</label>
+          <input type="file" required>
+        </div>
+        <div>
+          <label>Something we don't care about</label>
+          <input type="text" placeholder="this is not required">
+        </div>
+        <div class="required">
+          <label>Password:</label>
+          <input type="password" required>
+        </div>
+        <div>
+          <label>Radio:</label>
+          <input type="radio"> Yes  <input type="radio"> No 
+        </div>
+        <div>
+          <label>Imp Info:</label>
+          <input type="text" value="while this is required">
+        </div>
+        <div class="required">
+          <label>Imp Select:</label>
+          <select required>
+            <option value="">Please Select Category</option>
+            <option value="1">Category 1</option>
+            <option value="2">Category 2</option>
+          </select>
+        </div>
+        <div>
+          <label>Notes:</label>
+          <textarea rows="10" cols="60"></textarea>
+        </div>
+        <div>
+          <input type="submit" value="Submit"/> | <input type="reset" value="Reset" />
+        </div>
+      </form>
+    </div>
+  </body>
 </html>
