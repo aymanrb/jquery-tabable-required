@@ -5,10 +5,11 @@
 	$(document).ready(function(){
 		$('form').on("keypress keydown", function(e) {
 		  var code = e.keyCode || e.which; 
-		  if (code == 13) { //If 'Enter'
+
+		  if (code == 13 && !$(':focus').is('textarea')) { //If 'Enter' key is pressed while not focused in a textarea
 		    e.preventDefault();
 		    $.focusNextRequired();
-		 }else if (code == 17) { //If 'CTRL'
+		 }else if (code == 17) { //If 'CTRL' key is pressed
 		    e.preventDefault();
 		    $.focusPrevRequired();
 		  }
@@ -25,7 +26,7 @@
 		}
 		var current = $(':focus');
 		var nextIndex = 0;
-		console.log(current.length);
+
 		if(current.length === 1){
 			var currentIndex = focusableElements.index(current);
 			if(currentIndex + 1 < focusableElements.length){
@@ -45,7 +46,7 @@
 		}
 		var current = $(':focus');
 		var nextIndex = 0;
-		console.log(current.length);
+
 		if(current.length === 1){
 			var currentIndex = focusableElements.index(current);
 			if(currentIndex - 1 < focusableElements.length){
