@@ -3,8 +3,9 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>Required Fields Focus</title>
-    <link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
-
+    <link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Economica:400,700' rel='stylesheet' type='text/css'>
+	
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="js/jQuery.tabable-required-focus.js"></script>
     <script>
@@ -18,16 +19,59 @@
       }
       #container{
 	      background: #fff;
-	      font-size: 12pt;
-	      width:900px;
-	      margin:auto;
+	      font-size: 13pt;
+	      width:1000px;
+	      margin-left:auto;
+	      margin-right:auto;
 	      margin-top:50px;
 	      padding:20px;
+	      overflow:auto;
+	      font-family: Tahoma;
+      }
+      #example{
+      	float:left;
+      	width:680px;
+      }
+      #about{
+      	background:#EE3322;
+      	float:left;
+      	width:280px;
+      	color:#fff;
+      	padding:15px;
+      	text-align: justify;
+      }
+      #about h3{
+      	font-size: 20pt;
+      	margin-left:0px;
+      	margin-right:0px;
+      	margin-top:10px;
+      	margin-bottom:10px;
+      	font-family: 'Economica', sans-serif;
+      	font-weight:bold;
+      }
+      #about a:link,#about a:active,#about a:visited{
+      	color: #fff;
+      	font-weight:bold;
+      	text-decoration: none;
+      }
+      #about a:hover{
+      	text-decoration: underline;
+      }
+      .warning{
+      	color:#EE3322;
+      	border:2px dashed #333333;
+      	background: #FFFFFF;
+      	padding:10px;
       }
       h1{
       	color:#EE3322;
       	text-align: center;
-      	font-family: 'Gloria Hallelujah', cursive;
+      	font-size:3em;
+      	font-family: 'Berkshire Swash', cursive;
+      }
+      h2{
+      	font-size:2em;
+      	font-family: 'Economica', sans-serif;
       }
       .desc{
       	color: #666;
@@ -58,54 +102,80 @@
   </head>
   <body>
     <div id="container">
-      <h1>jQuery Tabable Required Fields Plugin Demo</h1>
+      <h1>jQuery Tabable Required Fields<br>Plugin Demo</h1>
       <div class="desc">Based on the HTML5 required attribute this plugin will cancel the normal on 'Enter' keypress form submission action and replaces it with a tabing effect on required fields only (where applicable). <b>TRY IT YOURSELF</b></div>
-      <form>
-        <div>
-          <label>Your Name: (Optional)</label><input id="firstElem" type="text" placeholder="this is not required">
-        </div>
-        <div>
-          <label>Button 1</label><button>Button</button>
-        </div>
-        <div class="required">
-          <label>An Important Checkbox</label><input type="checkbox" required>
-        </div>
-        <div class="required">
-          <label>Upload Image</label>
-          <input type="file" required>
-        </div>
-        <div>
-          <label>Something we don't care about</label>
-          <input type="text" placeholder="this is not required">
-        </div>
-        <div class="required">
-          <label>Password:</label>
-          <input type="password" required>
-        </div>
-        <div>
-          <label>Radio:</label>
-          <input type="radio"> Yes  <input type="radio"> No 
-        </div>
-        <div>
-          <label>Imp Info:</label>
-          <input type="text" value="while this is required">
-        </div>
-        <div class="required">
-          <label>Imp Select:</label>
-          <select required>
-            <option value="">Please Select Category</option>
-            <option value="1">Category 1</option>
-            <option value="2">Category 2</option>
-          </select>
-        </div>
-        <div>
-          <label>Notes:</label>
-          <textarea rows="10" cols="60"></textarea>
-        </div>
-        <div>
-          <input type="submit" value="Submit"/> | <input type="reset" value="Reset" />
-        </div>
-      </form>
+      <div id="example">
+      	  <h2>Example:</h2>
+	      <form>
+	        <div>
+	          <label>Your Name:</label><input id="firstElem" type="text" placeholder="this is not required"> (Optional)
+	        </div>
+	        <div>
+	          <label>Button 1</label><button>Button</button>
+	        </div>
+	        <div class="required">
+	          <label>An Important Checkbox</label><input type="checkbox" required>
+	        </div>
+	        <div class="required">
+	          <label>Upload Image</label>
+	          <input type="file" required>
+	        </div>
+	        <div>
+	          <label>Something we don't care about</label>
+	          <input type="text" placeholder="this is not required">
+	        </div>
+	        <div class="required">
+	          <label>Password:</label>
+	          <input type="password" required>
+	        </div>
+	        <div>
+	          <label>Radio:</label>
+	          <input type="radio"> Yes  <input type="radio"> No 
+	        </div>
+	        <div class="required">
+	          <label>Imp Info:</label>
+	          <input required="required" type="text" placeholder="while this is required">
+	        </div>
+	        <div class="required">
+	          <label>Imp Select:</label>
+	          <select required>
+	            <option value="">Please Select Category</option>
+	            <option value="1">Category 1</option>
+	            <option value="2">Category 2</option>
+	          </select>
+	        </div>
+	        <div>
+	          <label>Notes:</label>
+	          <textarea rows="10" cols="45"></textarea>
+	        </div>
+	        <div>
+	          <input type="submit" value="Submit"/> | <input type="reset" value="Reset" />
+	        </div>
+	      </form>
+      </div>
+      <div id="about">
+	      <h3>What's this?</h3>
+	      <div class="about-txt">
+	      	The jQuery Tabable Required Fields Plugin
+	      </div>
+	      
+	      <h3>Description</h3>
+	      <div class="about-txt">
+	      	A very simple jQuery plugin that prevents web forms from being submitted on '<b>Enter</b>' keypress and replaces this default behavior with a more convenient one, it takes your focus on to the next required field in the form. If no fields are required the plugin will take you through each input one at a time (just like the 'Tab' keypress behavior in this case)
+	      </div>
+	      
+	      <h3>Links</h3>
+	      <div class="about-txt">
+	      	<ul>
+	      		<li><a target="_blank" href="https://github.com/aymanrb/jquery-tabable-required">Github</a></li>
+	      		<li><a target="_blank" href="https://github.com/aymanrb/jquery-tabable-required/issues">Bugs &amp; Issues</a></li>
+	      	</ul>
+	      </div>
+	      <h3>Disclaimer</h3>
+	      <div class="about-txt warning">
+	     	 This plugin was just freshly published. It's still in its early development days and was not properly tested yet. So please, if you hit an error, kindly report it @ the github bugs and issues tracking page.<br> <div align="right">Thanks :-)</div>
+	      </div>
+      </div>
     </div>
 <script>
 // Flying Focus Javascript - https://github.com/NV/flying-focus
