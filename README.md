@@ -8,14 +8,16 @@ http://aymanrb.github.io/jquery-tabable-required/
 
 ## Usage Example:
 
-Currenty with the simple implementation of the plugin you are only required to include the Plugin file in the header of your page
 ```HTML
-
-//Implement the tabable required fields plugin
+<!--Add the following to the <head> tag of your page -->
 <script src="js/jQuery.tabable-required-focus.js"></script>
-
+<script>
+    $(document).ready(function(){
+    	//Activate the 'Tabable Required Fields Focus' plugin when the page loads
+		$.tabableRequiredFieldsFocus();
+	});
+</script>
 ```
-
 
 ## License
 
