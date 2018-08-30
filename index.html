@@ -1,320 +1,192 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>Required Fields Focus</title>
-    <link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Economica:400,700' rel='stylesheet' type='text/css'>
-	
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="js/jQuery.tabable-required-focus.js"></script>
-    <script>
-    	$(document).ready(function(){
-    		$('#firstElem').focus();
-    		
-    		//Activate the Tabable Required Fields Focus plugin on this page
-    		$.tabableRequiredFieldsFocus();
-    	});
-    </script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <style>
-      body{
-      	background:#333;
-      }
-      #container{
-	      background: #fff;
-	      font-size: 13pt;
-	      width:1000px;
-	      margin-left:auto;
-	      margin-right:auto;
-	      margin-top:50px;
-	      padding:20px;
-	      overflow:auto;
-	      font-family: Tahoma;
-      }
-      #example{
-      	float:left;
-      	width:680px;
-      }
-      #about{
-      	background:#EE3322;
-      	float:left;
-      	width:280px;
-      	color:#fff;
-      	padding:15px;
-      	text-align: justify;
-      }
-      #about h3{
-      	font-size: 20pt;
-      	margin-left:0px;
-      	margin-right:0px;
-      	margin-top:10px;
-      	margin-bottom:10px;
-      	font-family: 'Economica', sans-serif;
-      	font-weight:bold;
-      }
-      #about a:link,#about a:active,#about a:visited{
-      	color: #fff;
-      	font-weight:bold;
-      	text-decoration: none;
-      }
-      #about a:hover{
-      	text-decoration: underline;
-      }
-      .warning{
-      	color:#EE3322;
-      	border:2px dashed #333333;
-      	background: #FFFFFF;
-      	padding:10px;
-      }
-      h1{
-      	color:#EE3322;
-      	text-align: center;
-      	font-size:3em;
-      	font-family: 'Berkshire Swash', cursive;
-      }
-      h2{
-      	font-size:2em;
-      	font-family: 'Economica', sans-serif;
-      }
-      .desc{
-      	color: #666;
-      	margin-bottom: 10px;
-      	text-align: center;
-      	font-size:10pt;
-      }
-      
-      input,select,textarea,button{
-     	 padding:4px;
-      }
-      label{
-	      margin-top:10px;
-	      width:200px;
-	      text-align:right;
-	      display:inline-block;
-	      margin-right: 8px;
-      }
-      .required label{
-      	font-weight: bolder;
-      }
-      .required label:after {
-	      color: #e32;
-	      content: '*';
-	      display: inline;
-      }
+        body {
+            background: #3f5b89;
+        }
+ 	
+	h1 {
+            color: #4185f2;
+            text-align: center;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        .container {
+            margin-top: 80px;
+            background: #fff;
+        }
+
+        .m-top-40{
+            margin-top: 40px;
+        }
+
+        #about {
+	    padding: 10px;
+            background: #ddeaff;
+        }
+
+        #about h3 {
+            font-size: 20pt;
+            margin: 10px 0px;
+            font-weight: bold;
+        }
+
+        #about a {
+            font-weight: bold;
+        }
+
+        .form-group {
+            margin-top: 20px;
+        }
+
+        .required label {
+            font-weight: bolder;
+        }
+
+        .required label:after {
+            color: #e32;
+            content: ' *';
+            display: inline;
+        }
     </style>
-  </head>
-  <body>
-    <div id="container">
-      <h1>jQuery Tabable Required Fields<br>Plugin Demo</h1>
-      <div class="desc">Based on the HTML5 required attribute this plugin will cancel the normal on 'Enter' keypress form submission action and replaces it with a tabing effect on required fields only (where applicable). <b>TRY IT YOURSELF</b></div>
-      <div id="example">
-      	  <h2>Example:</h2>
-	      <form>
-	        <div>
-	          <label>Your Name:</label><input id="firstElem" type="text" placeholder="this is not required"> (Optional)
-	        </div>
-	        <div>
-	          <label>Button 1</label><button>Button</button>
-	        </div>
-	        <div class="required">
-	          <label>An Important Checkbox</label><input type="checkbox" required>
-	        </div>
-	        <div class="required">
-	          <label>Upload Image</label>
-	          <input type="file" required>
-	        </div>
-	        <div>
-	          <label>Something we don't care about</label>
-	          <input type="text" placeholder="this is not required">
-	        </div>
-	        <div class="required">
-	          <label>Password:</label>
-	          <input type="password" required>
-	        </div>
-	        <div>
-	          <label>Radio:</label>
-	          <input type="radio"> Yes  <input type="radio"> No 
-	        </div>
-	        <div class="required">
-	          <label>Imp Info:</label>
-	          <input required="required" type="text" placeholder="while this is required">
-	        </div>
-	        <div class="required">
-	          <label>Imp Select:</label>
-	          <select required>
-	            <option value="">Please Select Category</option>
-	            <option value="1">Category 1</option>
-	            <option value="2">Category 2</option>
-	          </select>
-	        </div>
-	        <div>
-	          <label>Notes:</label>
-	          <textarea rows="10" cols="45"></textarea>
-	        </div>
-	        <div>
-	          <input type="submit" value="Submit"/> | <input type="reset" value="Reset" />
-	        </div>
-	      </form>
-      </div>
-      <div id="about">
-	      <h3>What's this?</h3>
-	      <div class="about-txt">
-	      	The jQuery Tabable Required Fields Plugin
-	      </div>
-	      
-	      <h3>Description</h3>
-	      <div class="about-txt">
-	      	A very simple jQuery plugin that prevents web forms from being submitted on '<b>Enter</b>' keypress and replaces this default behavior with a more convenient one, it takes your focus on to the next required field in the form. If no fields are required the plugin will take you through each input one at a time (just like the 'Tab' keypress behavior in this case)
-	      </div>
-	      
-	      <h3>Links</h3>
-	      <div class="about-txt">
-	      	<ul>
-	      		<li><a target="_blank" href="https://github.com/aymanrb/jquery-tabable-required">Github</a></li>
-	      		<li><a target="_blank" href="https://github.com/aymanrb/jquery-tabable-required/issues">Bugs &amp; Issues</a></li>
-	      	</ul>
-	      </div>
-	      <h3>Caution</h3>
-	      <div class="about-txt warning">
-	     	 This plugin was just freshly published. It's still in its early development days and was not properly tested yet. So please, if you hit an error, kindly report it @ the github bugs and issues tracking page.<br> <div align="right">Thanks :-)</div>
-	      </div>
-      </div>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row m-top-40">
+                <div class="col-md-12">
+                    <h1>jQuery Tabable Required Fields<br>Plugin Demo</h1>
+                    <small class="form-text text-muted text-center">
+                        Based on the HTML5 required attribute this plugin will cancel the normal on 'Enter'
+                        keypress form submission action and replaces it with a tabing effect on required fields only
+                        (where applicable).
+                        <b>TRY IT YOURSELF</b>
+                    </small>
+                </div>
+            </div>
+            <div class="row m-top-40">
+                <div class="col-md-8">
+                    <h2>Example:</h2>
+                    <form>
+                        <div class="form-group">
+                            <label>Your Name:</label>
+			    <input class="form-control" id="firstElem" type="text" placeholder="this is not required">
+                            <small class="form-text text-muted">(Optional)</small>
+                        </div>
+                        <div class="required form-check">
+                            <input type="checkbox" class="form-check-input" required>
+                            <label>An Important Checkbox</label>
+                        </div>
+			<div class="form-group">
+                            <label>Address:</label>
+			    <input class="form-control"  type="text" placeholder="this is also not required">
+                            <small class="form-text text-muted">(Optional)</small>
+                        </div>
+                        <div class="required form-group">
+                            <label>Upload Image</label>
+                            <input type="file" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Something we don't care about</label>
+                            <input type="text" class="form-control" placeholder="this is not required">
+                        </div>
+                        <div class="required form-group">
+                            <label>Password:</label>
+                            <input type="password" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Would you like to answer this question?</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"> <label>Yes</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"> <label>No</label>
+                        </div>
+                        <div class="required form-group">
+                            <label>Imp Info:</label>
+                            <input required="required" class="form-control" type="text"
+                                   placeholder="while this is required">
+                        </div>
+                        <div class="required form-group">
+                            <label>Imp Select:</label>
+                            <select class="form-control" required>
+                                <option value="">Please Select Category</option>
+                                <option value="1">Category 1</option>
+                                <option value="2">Category 2</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Notes:</label>
+                            <textarea class="form-control" rows="10" cols="60"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <input class="btn btn-primary" type="submit" value="Submit"/>
+                            <input class="btn btn-danger" type="reset" value="Reset"/>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4">
+		    <div id="about">
+                    <h3>What's this?</h3>
+                    <div class="about-txt">
+                        The jQuery Tabable Required Fields Plugin
+                    </div>
+
+                    <h3>Description</h3>
+                    <div class="about-txt">
+                        A very simple jQuery plugin that prevents web forms from being submitted on '<b>Enter</b>'
+                        keypress and
+                        replaces this default behavior with a more convenient one, it takes your focus on to the next
+                        required
+                        field
+                        in the form. If no fields are required the plugin will take you through each input one at a time
+                        (just
+                        like
+                        the 'Tab' keypress behavior in this case)
+                    </div>
+
+                    <h3>Links</h3>
+                    <div class="about-txt">
+                        <ul>
+                            <li><a target="_blank" href="https://github.com/aymanrb/jquery-tabable-required">Github</a>
+                            </li>
+                            <li><a target="_blank" href="https://github.com/aymanrb/jquery-tabable-required/issues">Bugs
+                                &amp;
+                                Issues</a></li>
+                            <li><a target="_blank" href="https://www.aymanrb.com">About the Author</a></li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <div class="row">
+        <div class="col-md text-center">
+            <a target="_blank" href="https://www.aymanrb.com">@aymanrb</a>
+        </div>
+    </div>
+</div>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/jQuery.tabable-required-focus.js"></script>
+<script src="js/flying-focus.js"></script>
 <script>
-// Flying Focus Javascript - https://github.com/NV/flying-focus
-'use strict';
-
-var DURATION = 950;
-
-var ringElem = null;
-var movingId = 0;
-var prevFocused = null;
-var keyDownTime = 0;
-
-var win = window;
-var doc = document;
-var docElem = doc.documentElement;
-var body = doc.body;
-
-
-docElem.addEventListener('keydown', function(event) {
-        var code = event.which;
-        // Show animation only upon Tab or Arrow keys press.
-        if (code === 9 || (code > 36 && code < 41)) {
-                keyDownTime = Date.now();
-        }
-}, false);
-
-
-docElem.addEventListener('focus', function(event) {
-        var target = event.target;
-        if (target.id === 'flying-focus') {
-                return;
-        }
-
-        var isFirstFocus = false;
-        if (!ringElem) {
-                isFirstFocus = true;
-                initialize();
-        }
-
-        var offset = offsetOf(target);
-        ringElem.style.left = offset.left + 'px';
-        ringElem.style.top = offset.top + 'px';
-        ringElem.style.width = target.offsetWidth + 'px';
-        ringElem.style.height = target.offsetHeight + 'px';
-
-        if (isFirstFocus || !isJustPressed()) {
-                return;
-        }
-
-        onEnd();
-        target.classList.add('flying-focus_target');
-        ringElem.classList.add('flying-focus_visible');
-        prevFocused = target;
-        movingId = setTimeout(onEnd, DURATION);
-}, true);
-
-
-docElem.addEventListener('blur', function() {
-        onEnd();
-}, true);
-
-
-function initialize() {
-        ringElem = doc.createElement('flying-focus'); // use uniq element name to decrease the chances of a conflict with website styles
-        ringElem.id = 'flying-focus';
-        ringElem.style.transitionDuration = ringElem.style.WebkitTransitionDuration = DURATION / 1000 + 's';
-        body.appendChild(ringElem);
-}
-
-
-function onEnd() {
-        if (!movingId) {
-                return;
-        }
-        clearTimeout(movingId);
-        movingId = 0;
-        ringElem.classList.remove('flying-focus_visible');
-        prevFocused.classList.remove('flying-focus_target');
-        prevFocused = null;
-}
-
-
-function isJustPressed() {
-        return Date.now() - keyDownTime < 42
-}
-
-
-function offsetOf(elem) {
-        var rect = elem.getBoundingClientRect();
-        var clientLeft = docElem.clientLeft || body.clientLeft;
-        var clientTop  = docElem.clientTop  || body.clientTop;
-        var scrollLeft = win.pageXOffset || docElem.scrollLeft || body.scrollLeft;
-        var scrollTop  = win.pageYOffset || docElem.scrollTop  || body.scrollTop;
-        var left = rect.left + scrollLeft - clientLeft;
-        var top =  rect.top  + scrollTop  - clientTop;
-        return {
-                top: top || 0,
-                left: left || 0
-        };
-}
-
-
-        var style = doc.createElement('style');
-        style.textContent = "#flying-focus {\
-        position: absolute;\
-        margin: 0;\
-        background: transparent;\
-        -webkit-transition-property: left, top, width, height;\
-        transition-property: left, top, width, height;\
-        -webkit-transition-timing-function: cubic-bezier(0,1,0,1);\
-        transition-timing-function: cubic-bezier(0,1,0,1);\
-        visibility: hidden;\
-        pointer-events: none;\
-        box-shadow: 0 0 2px 3px #78aeda, 0 0 2px #78aeda inset; border-radius: 2px;\
-}\
-#flying-focus.flying-focus_visible {\
-        visibility: visible;\
-        z-index: 9999;\
-}\
-.flying-focus_target {\
-        outline: none !important; /* Doesn't work in Firefox :( */\
-}\
-/* http://stackoverflow.com/questions/71074/how-to-remove-firefoxs-dotted-outline-on-buttons-as-well-as-links/199319 */\
-.flying-focus_target::-moz-focus-inner {\
-        border: 0 !important;\
-}\
-/* Replace it with @supports rule when browsers catch up */\
-@media screen and (-webkit-min-device-pixel-ratio: 0) {\
-        #flying-focus {\
-                box-shadow: none;\
-                outline: 5px auto -webkit-focus-ring-color;\
-                outline-offset: -3px;\
-        }\
-}\
-";
-        body.appendChild(style);
+    $(document).ready(function () {
+        $('#firstElem').focus();
+        $.tabableRequiredFieldsFocus();
+    });
 </script>
-  </body>
+</body>
 </html>
